@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+import './App.css';
 
 
 class App extends Component {
   render() {
     return (
-        <form class="form-horizontal">
+        <div className="container">
+        <form className="form-horizontal">
             <fieldset>
-                <legend>Legend</legend>
-                <div class="form-group">
-                 <label for="InputEmail1" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
-                     <input type="text" class="form-control" id="inputEmail1" placeholder="Email"/>
+                <legend>Search Nearby Places</legend>
+                <div className="form-group">
+                 <label htmlFor="InputEmail1" className="col-lg-2 control-label">Place</label>
+                    <div className="col-lg-10">
+                     <input type="text" className="form-control" id="inputEmail1" placeholder="Search here"/>
 
                     </div>
                 </div>
             </fieldset>
         </form>
+        </div>
     );
   }
 }
