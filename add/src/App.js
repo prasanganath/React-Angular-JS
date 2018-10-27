@@ -26,6 +26,10 @@ class App extends Component {
                 </div>
             </fieldset>
         </form>
+                <ul>
+                    <li>Kandy</li>
+                    <li>Colombo</li>
+                </ul>
             </div>
             <div className="col-md-4">
                 <h2>Saved Places</h2>
