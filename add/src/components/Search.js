@@ -1,10 +1,22 @@
 import React,{Component} from 'react';
+import axios from 'axios';
 
 class Search extends Component{
 
     getKey(e){
         e.preventDefault();
         const keyTyped = this.refs.inputword.value;
+            axios.post('node server endpoint', {
+                city: keyTyped,
+
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
     }
 
 
