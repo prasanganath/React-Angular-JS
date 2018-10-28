@@ -6,7 +6,7 @@ class SideList extends Component{
     render(){
 
         return(
-            <h2>Saved Places from sidelist component</h2>
+            <h2>Saved Places</h2>
 
         )
 
