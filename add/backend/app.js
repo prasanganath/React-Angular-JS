@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
 var Client = require('node-rest-client').Client;
 
 var client = new Client();
@@ -16,11 +17,11 @@ app.use(bodyParser.json());
 app.post('/getLocations',(req,res)=>{
 
     const typedWord = req.body.city;
-    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+typedWord+"top+sights&key=AIzaSyBOGgzEUpR82TcAabFHEwQ2fr38jic3B-M ", function (data, responce) {
+    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+typedWord+"top+sights&key=AIzaSyBOGgzEUpR82TcAabFHEwQ2fr38jic3B-M  ", function (data, responce) {
         // parsed response body as js object
         console.log(data);
         // raw response
-        //console.log(response);
+        //console.log(responce);
     });
 })
 
