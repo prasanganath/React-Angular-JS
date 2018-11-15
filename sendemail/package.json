@@ -1,0 +1,14 @@
+{
+  "name": "sendemail",
+  "version": "1.0.0",
+  "description": "sending EMAIL",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^4.6.8"
+  }
+}
