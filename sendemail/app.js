@@ -23,7 +23,17 @@ app.get('/', (req, res) => {
 
 });
 app.post('/send', (req, res) => {
-    console.log(req.body);
+    const output = '
+     <p>You have a new contct request</p>
+     <h3>Contact Dtails</h3>
+     <ul>
+         <li>Name: ${req.body.name}</li>
+         <li>Company: ${req.body.company}</li>
+         <li>Email: ${req.body.email}</li>
+         <li>Phone: ${req.body.phone}</li>
+     </ul>
+
+    ';
 });
 
 app.listen(3000, () => console.log('Server started...'));
