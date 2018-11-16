@@ -4,6 +4,12 @@ const exphbs = require('express-handlebars');
 
 const nodemailer = require('nodemailer');
 const app = express();
+// View engine setup
+
+app.engine('handlebars' ,exphbs());
+app.set('view engine', 'handlebars');
+
+// Body Parser Middleware
 app.get('/', (req, res) => {
     res.send('Hello');
 
