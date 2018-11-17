@@ -33,12 +33,12 @@ app.get('/', (req, res) => {
 
   //Catch from submit
   app.post('/', (req, res) => {
-      res.send(req.body);
-      console.log(req.body);
-      //const number = req.body.number;
-      //const text = req.body.text;
+      //res.send(req.body);
+      //console.log(req.body);
+      const number = req.body.number;
+      const text = req.body.text;
 
-      nexmo.message.sendms(
+      nexmo.message.sendSms(
           '0779592218', number, text, { type: 'unicode' },
           (error, responseData) => {
               if(err) {
