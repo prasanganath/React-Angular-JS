@@ -15,7 +15,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Body Parser Middleware
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
