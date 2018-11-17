@@ -4,6 +4,12 @@ const ejs = require('ejs');
 const Nexmo = require('nexmo');
 const socketio = require('socket.io');
 
+// Init Nexmo
+const nexmo = new Nexmo({
+    apiKey: '5cb6e764',
+    apiSecret: '9mBRkEnn4xZnd2gr'
+  }, { debug: true });
+
 
   
   // Init app
@@ -23,6 +29,25 @@ const socketio = require('socket.io');
   // Index route
 app.get('/', (req, res) => {
     res.render('index');
+  });
+
+  //Catch from submit
+  app.post('/', (req, res) => {
+      res.send(req.body);
+      console.log(req.body);
+      //const number = req.body.number;
+      //const text = req.body.text;
+
+      nexmo.message.sendms(
+          '0779592218', number, text, { type: 'unicode' },
+          (error, responseData) => {
+              if(err) {
+                  console.log(err);
+              } else {
+                  console.dir(responseData);
+              }
+          }
+      );
   });
   
 
