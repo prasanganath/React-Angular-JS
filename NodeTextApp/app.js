@@ -7,3 +7,16 @@ const socketio = require('socket.io');
 //Init app
 
 const app = express();
+// Template engine setup
+
+app.set('view engine', 'html');
+app.engine('html', ejs.renderFile);
+
+//Public folder setup
+
+app.use(express.static(__dirname + '/public'));
+
+//Body parser middleware
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
