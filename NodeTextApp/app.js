@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
   });
   
 
-  // Define port
+  
 const port = 3000;
 
 // Start server
