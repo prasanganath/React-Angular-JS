@@ -1,4 +1,4 @@
-var mod=require('./createmodel2');
+var mod=require('./create_model2');
 var http= require('http');
 http.createServer(function(req,res){
 	res.end("Hello world");
