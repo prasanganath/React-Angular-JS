@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/prasanganath/Node-React-Angular-JS.git"
   },
-  "author": "",
+  "author": "sandun",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prasanganath/Node-React-Angular-JS/issues"
@@ -19,5 +19,14 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "2015": "0.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-es": "^1.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.29.6",
+    "webpack-dev-server": "^3.2.1"
   }
 }
