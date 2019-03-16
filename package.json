@@ -1,0 +1,23 @@
+{
+  "name": "node-react-angular-js",
+  "version": "1.0.0",
+  "description": "---Node-React-Angular-JS---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasanganath/Node-React-Angular-JS.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prasanganath/Node-React-Angular-JS/issues"
+  },
+  "homepage": "https://github.com/prasanganath/Node-React-Angular-JS#readme",
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
