@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import Product from "./Product";
 import Title from "./Title";
-import { storeProducts } from  '../data';
+//import { storeProducts } from  '../data';
 import { ProductConsumer } from '../context';
     import { format } from "url";
 
 export default class ProductList extends Component {
-    state={
-        products:storeProducts
-    };
+    
     render() {
         //console.log(this.state.products);
         return (
@@ -18,15 +16,15 @@ export default class ProductList extends Component {
                 <Title name="our" title="products" />
             
             <div className="row">
-            <ProductConsumer>
-                {value => {
-                    return value.products.map( product =>{
+                <ProductConsumer>
+                    {value => {
+                        return value.products.map( product =>{
                         return <Product key={product.id} product={product} />;
-                    })
+                        })
 
-                }}
+                    }}
 
-            </ProductConsumer>
+                </ProductConsumer>
 
             </div>
 
