@@ -37,7 +37,33 @@ export default class Details extends Component {
                               made by : <span className="text-uppercase">
                                   {company}
                               </span>
+
                           </h4>
+                          <h4 className="text-blue">
+                              <strong>
+                                  price : <span>$</span>
+                                  {price}
+                              </strong>
+                          </h4>
+                          <p className="text-capitalize.font-weight-bold mt-3 mb-0">
+                              Some info about product:
+                          </p>
+                          <p className="text-muted lead">
+                              {info}
+
+                          </p>
+
+                          {/* buttons */}
+                          <Link to='/'>
+                              <ButtonContainer>
+                                  products
+                              </ButtonContainer>
+                          </Link>
+                          <ButtonContainer>
+                              {inCart? "inCart" : "add to cart"}
+
+                          </ButtonContainer>
+
 
                       </div>
 
