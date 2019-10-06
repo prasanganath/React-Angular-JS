@@ -11,6 +11,7 @@ import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import Details from './components/Details';
 import Model from './components/Model';
+//import CartColumns from './components/Cart/CartColumns';
 
 
 class App extends Component {
