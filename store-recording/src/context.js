@@ -89,20 +89,78 @@ class ProductProvider extends Component {
         });
 
     };
-    increment = (id) =>{
-        console.log('this is increment method ');
+    increment = id =>{
+        let tempCart = [...this.state.cart];
+        const selectedProduct = tempCart.find(item => item.id === id);
+
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+
+        product.count = product.count + 1;
+        product.total = product.count * product.price;
+
+        this.setState(()=>{return{cart:[...tempCart]}},()=>{this.addTotals()})
     };
-    decrement = (id) =>{
-        console.log('this is decrement method ');
+    decrement = id =>{
+        let tempCart = [...this.state.cart];
+        const selectedProduct = tempCart.find(item => item.id === id);
+
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+
+        product.count = product.count - 1;
+        if(product.count === 0){
+            this.removeItem(id)
+        }
+        else{
+            product.total = product.count * product.price;
+         this.setState(()=>{
+             return {cart: [...tempCart] }
+            },
+            ()=>{
+                this.addTotals();
+            }
+            );
     };
-    removeItem = (id)=> {
-        console.log('item removed');
+        }
+
+        
+    };
+    removeItem = id=> {
+       let tempProducts = [...this.state.products];
+       let tempCart = [...this.state.cart];
+
+    tempCart = tempCart.filter(item => item.id !== id);
+
+    const index = tempProducts.indexOf(this.getItem(id))
+    let removedProduct = tempProducts[index];
+    removedProduct.inCart = false;
+    removedProduct.count = 0;
+    removedProduct.total = 0;
+
+    this.setState(()=>{
+        return {
+            cart:[...tempCart],
+            products:[...tempProducts] 
+
+        };
+    }, ()=> {
+        this.addTotals();
+        //this.setProducts();
+        
+    }
+    );
 
     };
     clearCart = () => {
        this.setState(()=>{
-           return {cart:[]}
-       })
+           return {cart:[]};
+       }, ()=>{
+           this.setProducts();
+           this.addTotals();
+
+       }
+       );
     };
 
     addTotals = () =>{
@@ -117,14 +175,14 @@ class ProductProvider extends Component {
             cartTax:tax,
             cartTotal:total
             };
-        });
+        }); 
     };
 
     
 
 
    
-    render() {
+    render(){
         return (
             <ProductContext.Provider 
             value={{
@@ -152,7 +210,7 @@ clearCart: this.clearCart
         ); 
         
 
-    }
-}
+     };
+
 const ProductConsumer = ProductContext.Consumer;
 export { ProductProvider, ProductConsumer };
